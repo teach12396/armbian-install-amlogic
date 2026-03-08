@@ -20,48 +20,48 @@ fi
 #   - pv: Progress viewer for disk operations
 #   - dialog: TUI dialogs for user interaction
 #   - dosfstools: FAT32 filesystem tools (mkfs.vfat)
+#   - e2fsprogs: ext4 filesystem tools (mkfs.ext4)
+#   - fdisk: Partition table editor
+#   - parted: Provides partprobe to notify kernel of partition changes
+#   - bsdextrautils: Provides hexdump
 #   - rsync: Efficient file synchronization
 # ------------------------------------------------------------------------------
-DEPENDENCIES="pv dialog dosfstools rsync"
-MISSING_PKGS=""
+# list of packages we rely on; use array so we can quote safely later
+DEPENDENCIES=(pv dialog dosfstools e2fsprogs fdisk parted bsdextrautils rsync)
+MISSING_PKGS=()
 
 echo "Checking dependencies..."
 
-for pkg in $DEPENDENCIES; do
+for pkg in "${DEPENDENCIES[@]}"; do
 
     if ! dpkg-query -W -f='${Status}' "$pkg" 2>/dev/null | grep -q "install ok installed"; then
 
         echo "Dependency missing: $pkg"
 
-        MISSING_PKGS="$MISSING_PKGS $pkg"
+        MISSING_PKGS+=("$pkg")
 
     fi
 
 done
 
-if [ -n "$MISSING_PKGS" ]; then
+if [ ${#MISSING_PKGS[@]} -ne 0 ]; then
 
-    echo "Installing missing dependencies:$MISSING_PKGS"
-    
-    apt-get update && apt-get install -y $MISSING_PKGS
-    
+    echo "Installing missing dependencies: ${MISSING_PKGS[*]}"
+
+    apt-get update
+
+    # expand array unquoted so each element is a separate argument
+    apt-get install -y "${MISSING_PKGS[@]}"
+
     if [ $? -ne 0 ]; then
 
-        echo "CRITICAL ERROR: Failed to install dependencies ($MISSING_PKGS)."
+        echo "CRITICAL ERROR: Failed to install dependencies (${MISSING_PKGS[*]})."
 
         echo "Please check your internet connection."
 
         exit 1
 
     fi
-
-fi
-
-if ! command -v pv &> /dev/null; then
-
-    echo "CRITICAL ERROR: 'pv' utility is still missing."
-
-    exit 1
 
 fi
 

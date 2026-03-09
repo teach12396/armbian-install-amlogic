@@ -18,16 +18,19 @@ fi
 # DEPENDENCY CHECK
 # Required packages:
 #   - pv: Progress viewer for disk operations
+#   - ncurses-bin: Provides tput
 #   - dialog: TUI dialogs for user interaction
 #   - dosfstools: FAT32 filesystem tools (mkfs.vfat)
 #   - e2fsprogs: ext4 filesystem tools (mkfs.ext4)
+#   - util-linux: Provides lsblk, blkid, flock, dmesg, mount, umount
 #   - fdisk: Partition table editor
 #   - parted: Provides partprobe to notify kernel of partition changes
 #   - bsdextrautils: Provides hexdump
 #   - rsync: Efficient file synchronization
+#   - udev: Provides udevadm
 # ------------------------------------------------------------------------------
 # list of packages we rely on; use array so we can quote safely later
-DEPENDENCIES=(pv dialog dosfstools e2fsprogs fdisk parted bsdextrautils rsync)
+DEPENDENCIES=(pv ncurses-bin dialog dosfstools e2fsprogs util-linux fdisk parted bsdextrautils rsync udev)
 MISSING_PKGS=()
 
 echo "Checking dependencies..."

@@ -310,9 +310,18 @@ Para dispositivos com bootloader desbloqueado ou não listados:
 O script verifica e instala automaticamente as seguintes dependências:
 
 - `pv` - Visualizador de progresso para operações de disco
+- `ncurses-bin` - Fornece `tput` (requerido pelo `dialog`)
 - `dialog` - Interface TUI para menus interativos
-- `dosfstools` - Ferramentas para sistema de arquivos FAT32 (mkfs.vfat)
+- `dosfstools` - Ferramentas para sistema de arquivos FAT32 (`mkfs.vfat`)
+- `e2fsprogs` - Ferramentas para sistema de arquivos ext4 (`mkfs.ext4`)
+- `util-linux` - Fornece `lsblk`, `blkid`, `flock`, `dmesg`, `mount`, `umount`
+- `fdisk` - Editor de tabela de partições
+- `parted` - Fornece `partprobe` para notificar o kernel sobre mudanças nas partições
+- `bsdextrautils` - Fornece `hexdump`
 - `rsync` - Sincronização eficiente de arquivos
+- `udev` - Fornece `udevadm`
+
+> ⚠️ **Aviso:** Os pacotes acima serão instalados automaticamente caso não estejam presentes no sistema. Se preferir removê-los após a instalação, utilize `sudo apt remove <pacote>`. Atenção: pacotes como `util-linux` e `udev` são componentes essenciais do sistema — **não os remova** a menos que tenha certeza de que não são usados por outros programas.
 
 ### Arquitetura do Projeto
 

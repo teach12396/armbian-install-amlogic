@@ -310,9 +310,18 @@ For devices with unlocked bootloader or unlisted:
 The script automatically checks and installs the following dependencies:
 
 - `pv` - Progress viewer for disk operations
+- `ncurses-bin` - Provides `tput` (required by `dialog`)
 - `dialog` - TUI interface for interactive menus
-- `dosfstools` - FAT32 filesystem tools (mkfs.vfat)
+- `dosfstools` - FAT32 filesystem tools (`mkfs.vfat`)
+- `e2fsprogs` - ext4 filesystem tools (`mkfs.ext4`)
+- `util-linux` - Provides `lsblk`, `blkid`, `flock`, `dmesg`, `mount`, `umount`
+- `fdisk` - Partition table editor
+- `parted` - Provides `partprobe` to notify the kernel of partition changes
+- `bsdextrautils` - Provides `hexdump`
 - `rsync` - Efficient file synchronization
+- `udev` - Provides `udevadm`
+
+> ⚠️ **Warning:** The packages above will be automatically installed if not already present on the system. If you wish to remove them after installation, use `sudo apt remove <package>`. Note: packages such as `util-linux` and `udev` are essential system components — **do not remove them** unless you are certain they are not used by other programs.
 
 ### Project Architecture
 

